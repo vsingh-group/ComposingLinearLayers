@@ -1,0 +1,27 @@
+rotor:
+  chunk_size:     2048
+  hidden_layers:  2
+  breadth_hidden: 3
+  lr:             0.05
+  weight_decay:   0
+  epochs:         1
+  batch_size:     256
+  nonlinear:      prelu
+  normalize:      True
+  residual:       false
+  use_perm:       true
+  cos_annealing:  true
+  proj_parallel:  false
+  single_rotor:   false
+
+lowrank_linear:
+  lr: 0.05
+  epochs: 1
+  batch_size: 256
+  cos_annealing: true
+
+bh_linear:
+  lr: 0.01
+  epochs: 1
+  batch_size: 256
+  cos_annealing: true

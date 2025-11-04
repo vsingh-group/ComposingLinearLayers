@@ -1,0 +1,16 @@
+--extra-index-url https://download.pytorch.org/whl/cu121
+
+#
+# This file lists the *direct* dependencies for the 'rotor' project.
+# Run 'pip-compile' to update requirements.txt after editing this file.
+#
+
+datasets
+matplotlib
+PyYAML
+tqdm
+
+# We pin torch and transformers because we know our
+# code depends on these specific versions.
+torch==2.5.1+cu121
+transformers==4.51.3
