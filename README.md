@@ -6,7 +6,11 @@ This repository contains the implementation for the NeurIPS 2025 paper "Composin
 
 ## Overview
 
-This work demonstrates how linear layers in large language models can be decomposed into geometric primitives (bivectors) using Clifford algebra, achieving exponential parameter reduction from O(d²) to O(log²d) while maintaining competitive performance. We replace key, query, and value projections in LLM attention layers with rotor-based transformations that compose simple geometric rotations.
+This work demonstrates how linear layers in large language models can be decomposed into geometric primitives (bivectors) using Clifford algebra, achieving exponential parameter reduction from O(d²) to O(log²d) while maintaining competitive performance. We replace key, query, and value projections in LLM attention layers with rotor-based transformations that compose simple geometric rotations. The bivector to rotor process via invariant decomposition is visualized below, which we go into much more detail in the paper and the differential algorithm we present.
+
+<p align="center">
+  <img src="images/bivector_to_rotor.png" alt="Bivector to Rotor" width="500">
+</p>
 
 ## Setup
 
