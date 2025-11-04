@@ -48,7 +48,6 @@ Available models:
 - `run_fox.sh` - Fox-1.0 1.6B
 
 Below are the average PPL for replacing up to three transformer layers of LLaMa and Qwen
-<!-- ![Average Table](images/average_table.png) -->
 <p align="center">
   <img src="images/average_table.png" alt="Average Table" width="500">
 </p>
@@ -59,6 +58,11 @@ To reproduce the projection convergence analysis:
 ```bash
 python -m run.test_projection_convergence
 ```
+
+Below are the results showing that while larger rotors initially require more iterations to converge, they eventually converge just as quickly as smaller models.
+<p align="center">
+  <img src="images/convergence_diagram.png" alt="Convergence Diagram" width="500">
+</p>
 
 ## Command-Line Arguments
 
@@ -120,7 +124,4 @@ If you use this code, please cite:
 
 ## Contact
 
-For questions or issues, please open a GitHub issue or contact:
-- Travis Pence: tnpence@wisc.edu
-- Daisuke Yamada: dyamada2@wisc.edu
-- Vikas Singh: vsingh@biostat.wisc.edu
+For questions or issues, please open a GitHub issue or contact Travis Pence at tnpence at wisc dot edu.
