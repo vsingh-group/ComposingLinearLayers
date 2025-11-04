@@ -10,10 +10,10 @@ do
   for layer in "${layers[@]}"
   do
     echo "Processing layer $layer on dataset $dataset"
-    python main.py --layers "$layer" --root result --replacement_type bh_linear               --config config  --dataset "$dataset" --train_projo --model Qwen2.5-1.5B
-    python main.py --layers "$layer" --root result --replacement_type lowrank_linear --rank 1 --config config  --dataset "$dataset" --train_projo --model Qwen2.5-1.5B
-    python main.py --layers "$layer" --root result --replacement_type lowrank_linear --rank 4 --config config  --dataset "$dataset" --train_projo --model Qwen2.5-1.5B
-    python main.py --layers "$layer" --root result --replacement_type rotor                   --config config  --dataset "$dataset" --train_projo --model Qwen2.5-1.5B --remove
+    python main.py --layers "$layer" --root result --replacement_type bh_linear               --config config_files/config  --dataset "$dataset" --train_projo --model Qwen2.5-1.5B
+    python main.py --layers "$layer" --root result --replacement_type lowrank_linear --rank 1 --config config_files/config  --dataset "$dataset" --train_projo --model Qwen2.5-1.5B
+    python main.py --layers "$layer" --root result --replacement_type lowrank_linear --rank 4 --config config_files/config  --dataset "$dataset" --train_projo --model Qwen2.5-1.5B
+    python main.py --layers "$layer" --root result --replacement_type rotor                   --config config_files/config  --dataset "$dataset" --train_projo --model Qwen2.5-1.5B --remove
   done
 done
 
@@ -21,50 +21,50 @@ layers=(6,27 8,10 6,13 3,18 4,20 10,16,27 8,12,26 3,18,20 12,19,20 4,6,13)
 for layer in "${layers[@]}"
 do
   echo "Processing layer $layer on dataset ptb"
-  python main.py --layers "$layer" --root result --replacement_type bh_linear               --config config  --dataset ptb --train_projo --model Qwen2.5-1.5B
-  python main.py --layers "$layer" --root result --replacement_type lowrank_linear --rank 1 --config config  --dataset ptb --train_projo --model Qwen2.5-1.5B
-  python main.py --layers "$layer" --root result --replacement_type lowrank_linear --rank 4 --config config  --dataset ptb --train_projo --model Qwen2.5-1.5B
-  python main.py --layers "$layer" --root result --replacement_type rotor                   --config config  --dataset ptb --train_projo --model Qwen2.5-1.5B --remove
+  python main.py --layers "$layer" --root result --replacement_type bh_linear               --config config_files/config  --dataset ptb --train_projo --model Qwen2.5-1.5B
+  python main.py --layers "$layer" --root result --replacement_type lowrank_linear --rank 1 --config config_files/config  --dataset ptb --train_projo --model Qwen2.5-1.5B
+  python main.py --layers "$layer" --root result --replacement_type lowrank_linear --rank 4 --config config_files/config  --dataset ptb --train_projo --model Qwen2.5-1.5B
+  python main.py --layers "$layer" --root result --replacement_type rotor                   --config config_files/config  --dataset ptb --train_projo --model Qwen2.5-1.5B --remove
 done
 
 layers=(11,25 6,26 12,23 7,18 17,22 7,13,18 8,23,24 13,15,20 7,14,23 13,18,21)
 for layer in "${layers[@]}"
 do
   echo "Processing layer $layer on dataset ptb"
-  python main.py --layers "$layer" --root result --replacement_type bh_linear               --config config  --dataset wikitext --train_projo --model Qwen2.5-1.5B
-  python main.py --layers "$layer" --root result --replacement_type lowrank_linear --rank 1 --config config  --dataset wikitext --train_projo --model Qwen2.5-1.5B
-  python main.py --layers "$layer" --root result --replacement_type lowrank_linear --rank 4 --config config  --dataset wikitext --train_projo --model Qwen2.5-1.5B
-  python main.py --layers "$layer" --root result --replacement_type rotor                   --config config  --dataset wikitext --train_projo --model Qwen2.5-1.5B --remove
+  python main.py --layers "$layer" --root result --replacement_type bh_linear               --config config_files/config  --dataset wikitext --train_projo --model Qwen2.5-1.5B
+  python main.py --layers "$layer" --root result --replacement_type lowrank_linear --rank 1 --config config_files/config  --dataset wikitext --train_projo --model Qwen2.5-1.5B
+  python main.py --layers "$layer" --root result --replacement_type lowrank_linear --rank 4 --config config_files/config  --dataset wikitext --train_projo --model Qwen2.5-1.5B
+  python main.py --layers "$layer" --root result --replacement_type rotor                   --config config_files/config  --dataset wikitext --train_projo --model Qwen2.5-1.5B --remove
 done
 
 layers=(9,23 10,14 19,22 8,15 8,11 9,10,16 13,20,24 7,11,22 9,12,15 11,20,23)
 for layer in "${layers[@]}"
 do
   echo "Processing layer $layer on dataset ptb"
-  python main.py --layers "$layer" --root result --replacement_type bh_linear               --config config  --dataset c4 --train_projo --model Qwen2.5-1.5B
-  python main.py --layers "$layer" --root result --replacement_type lowrank_linear --rank 1 --config config  --dataset c4 --train_projo --model Qwen2.5-1.5B
-  python main.py --layers "$layer" --root result --replacement_type lowrank_linear --rank 4 --config config  --dataset c4 --train_projo --model Qwen2.5-1.5B
-  python main.py --layers "$layer" --root result --replacement_type rotor                   --config config  --dataset c4 --train_projo --model Qwen2.5-1.5B --remove
+  python main.py --layers "$layer" --root result --replacement_type bh_linear               --config config_files/config  --dataset c4 --train_projo --model Qwen2.5-1.5B
+  python main.py --layers "$layer" --root result --replacement_type lowrank_linear --rank 1 --config config_files/config  --dataset c4 --train_projo --model Qwen2.5-1.5B
+  python main.py --layers "$layer" --root result --replacement_type lowrank_linear --rank 4 --config config_files/config  --dataset c4 --train_projo --model Qwen2.5-1.5B
+  python main.py --layers "$layer" --root result --replacement_type rotor                   --config config_files/config  --dataset c4 --train_projo --model Qwen2.5-1.5B --remove
 done
 
 layers=(20,24 4,19 3,23 7,26 5,16 6,18,25 3,19,23 2,22,27 3,15,18)
 for layer in "${layers[@]}"
 do
   echo "Processing layer $layer on dataset ptb"
-  python main.py --layers "$layer" --root result --replacement_type bh_linear               --config config  --dataset arc_challenge --train_projo --model Qwen2.5-1.5B
-  python main.py --layers "$layer" --root result --replacement_type lowrank_linear --rank 1 --config config  --dataset arc_challenge --train_projo --model Qwen2.5-1.5B
-  python main.py --layers "$layer" --root result --replacement_type lowrank_linear --rank 4 --config config  --dataset arc_challenge --train_projo --model Qwen2.5-1.5B
-  python main.py --layers "$layer" --root result --replacement_type rotor                   --config config  --dataset arc_challenge --train_projo --model Qwen2.5-1.5B --remove
+  python main.py --layers "$layer" --root result --replacement_type bh_linear               --config config_files/config  --dataset arc_challenge --train_projo --model Qwen2.5-1.5B
+  python main.py --layers "$layer" --root result --replacement_type lowrank_linear --rank 1 --config config_files/config  --dataset arc_challenge --train_projo --model Qwen2.5-1.5B
+  python main.py --layers "$layer" --root result --replacement_type lowrank_linear --rank 4 --config config_files/config  --dataset arc_challenge --train_projo --model Qwen2.5-1.5B
+  python main.py --layers "$layer" --root result --replacement_type rotor                   --config config_files/config  --dataset arc_challenge --train_projo --model Qwen2.5-1.5B --remove
 done
 
 layers=(2,26 5,9 8,21 4,7 17,27 8,12,21 14,15,20 5,14,16 11,16,22 9,13,17)
 for layer in "${layers[@]}"
 do
   echo "Processing layer $layer on dataset ptb"
-  python main.py --layers "$layer" --root result --replacement_type bh_linear               --config config  --dataset hellaswag_chat --train_projo --model Qwen2.5-1.5B
-  python main.py --layers "$layer" --root result --replacement_type lowrank_linear --rank 1 --config config  --dataset hellaswag_chat --train_projo --model Qwen2.5-1.5B
-  python main.py --layers "$layer" --root result --replacement_type lowrank_linear --rank 4 --config config  --dataset hellaswag_chat --train_projo --model Qwen2.5-1.5B
-  python main.py --layers "$layer" --root result --replacement_type rotor                   --config config  --dataset hellaswag_chat --train_projo --model Qwen2.5-1.5B --remove
+  python main.py --layers "$layer" --root result --replacement_type bh_linear               --config config_files/config  --dataset hellaswag_chat --train_projo --model Qwen2.5-1.5B
+  python main.py --layers "$layer" --root result --replacement_type lowrank_linear --rank 1 --config config_files/config  --dataset hellaswag_chat --train_projo --model Qwen2.5-1.5B
+  python main.py --layers "$layer" --root result --replacement_type lowrank_linear --rank 4 --config config_files/config  --dataset hellaswag_chat --train_projo --model Qwen2.5-1.5B
+  python main.py --layers "$layer" --root result --replacement_type rotor                   --config config_files/config  --dataset hellaswag_chat --train_projo --model Qwen2.5-1.5B --remove
 done
 
 # python /workspace/emailme/emailme.py --GPU "$gpu_id"

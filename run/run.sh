@@ -9,6 +9,6 @@ for layer in "${layers[@]}"
 do
   echo "Processing layer $layer"
   # python main.py --layers "$layer" --root result --replacement_type rotor --config config  --dataset wikitext --model llama1B --llm_batch_size 16
-  python main.py --layers "$layer" --root result_normed --replacement_type lowrank_linear --rank 4 --config config  --dataset wikitext --model llama1B --train_projo --llm_batch_size 16
+  python main.py --layers "$layer" --root result_normed --replacement_type lowrank_linear --rank 4 --config config_files/config  --dataset wikitext --model llama1B --train_projo --llm_batch_size 16
 done
 # python /workspace/emailme/emailme.py --GPU "$gpu_id"

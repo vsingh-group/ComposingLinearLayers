@@ -10,10 +10,10 @@ do
   for layer in "${layers[@]}"
   do
     echo "Processing layer $layer on dataset $dataset"
-    python main.py --layers "$layer" --root result --replacement_type bh_linear               --config config  --dataset "$dataset" --train_projo --model fox
-    python main.py --layers "$layer" --root result --replacement_type lowrank_linear --rank 1 --config config  --dataset "$dataset" --train_projo --model fox
-    python main.py --layers "$layer" --root result --replacement_type lowrank_linear --rank 4 --config config  --dataset "$dataset" --train_projo --model fox
-    python main.py --layers "$layer" --root result --replacement_type rotor                   --config config  --dataset "$dataset" --train_projo --model fox --remove
+    python main.py --layers "$layer" --root result --replacement_type bh_linear               --config config_files/config  --dataset "$dataset" --train_projo --model fox
+    python main.py --layers "$layer" --root result --replacement_type lowrank_linear --rank 1 --config config_files/config  --dataset "$dataset" --train_projo --model fox
+    python main.py --layers "$layer" --root result --replacement_type lowrank_linear --rank 4 --config config_files/config  --dataset "$dataset" --train_projo --model fox
+    python main.py --layers "$layer" --root result --replacement_type rotor                   --config config_files/config  --dataset "$dataset" --train_projo --model fox --remove
   done
 done
 
@@ -21,50 +21,50 @@ layers=(8,12 3,30 16,17 16,20 3,28)
 for layer in "${layers[@]}"
 do
   echo "Processing layer $layer on dataset ptb"
-  python main.py --layers "$layer" --root result --replacement_type bh_linear               --config config  --dataset ptb --train_projo --model fox
-  python main.py --layers "$layer" --root result --replacement_type lowrank_linear --rank 1 --config config  --dataset ptb --train_projo --model fox
-  python main.py --layers "$layer" --root result --replacement_type lowrank_linear --rank 4 --config config  --dataset ptb --train_projo --model fox
-  python main.py --layers "$layer" --root result --replacement_type rotor                   --config config  --dataset ptb --train_projo --model fox --remove
+  python main.py --layers "$layer" --root result --replacement_type bh_linear               --config config_files/config  --dataset ptb --train_projo --model fox
+  python main.py --layers "$layer" --root result --replacement_type lowrank_linear --rank 1 --config config_files/config  --dataset ptb --train_projo --model fox
+  python main.py --layers "$layer" --root result --replacement_type lowrank_linear --rank 4 --config config_files/config  --dataset ptb --train_projo --model fox
+  python main.py --layers "$layer" --root result --replacement_type rotor                   --config config_files/config  --dataset ptb --train_projo --model fox --remove
 done
 
 layers=(9,31 24,27 19,31 4,15 11,16)
 for layer in "${layers[@]}"
 do
   echo "Processing layer $layer on dataset ptb"
-  python main.py --layers "$layer" --root result --replacement_type bh_linear               --config config  --dataset wikitext --train_projo --model fox
-  python main.py --layers "$layer" --root result --replacement_type lowrank_linear --rank 1 --config config  --dataset wikitext --train_projo --model fox
-  python main.py --layers "$layer" --root result --replacement_type lowrank_linear --rank 4 --config config  --dataset wikitext --train_projo --model fox
-  python main.py --layers "$layer" --root result --replacement_type rotor                   --config config  --dataset wikitext --train_projo --model fox --remove
+  python main.py --layers "$layer" --root result --replacement_type bh_linear               --config config_files/config  --dataset wikitext --train_projo --model fox
+  python main.py --layers "$layer" --root result --replacement_type lowrank_linear --rank 1 --config config_files/config  --dataset wikitext --train_projo --model fox
+  python main.py --layers "$layer" --root result --replacement_type lowrank_linear --rank 4 --config config_files/config  --dataset wikitext --train_projo --model fox
+  python main.py --layers "$layer" --root result --replacement_type rotor                   --config config_files/config  --dataset wikitext --train_projo --model fox --remove
 done
 
 layers=(12,31 19,27 10,31 26,29 14,29)
 for layer in "${layers[@]}"
 do
   echo "Processing layer $layer on dataset ptb"
-  python main.py --layers "$layer" --root result --replacement_type bh_linear               --config config  --dataset c4 --train_projo --model fox
-  python main.py --layers "$layer" --root result --replacement_type lowrank_linear --rank 1 --config config  --dataset c4 --train_projo --model fox
-  python main.py --layers "$layer" --root result --replacement_type lowrank_linear --rank 4 --config config  --dataset c4 --train_projo --model fox
-  python main.py --layers "$layer" --root result --replacement_type rotor                   --config config  --dataset c4 --train_projo --model fox --remove
+  python main.py --layers "$layer" --root result --replacement_type bh_linear               --config config_files/config  --dataset c4 --train_projo --model fox
+  python main.py --layers "$layer" --root result --replacement_type lowrank_linear --rank 1 --config config_files/config  --dataset c4 --train_projo --model fox
+  python main.py --layers "$layer" --root result --replacement_type lowrank_linear --rank 4 --config config_files/config  --dataset c4 --train_projo --model fox
+  python main.py --layers "$layer" --root result --replacement_type rotor                   --config config_files/config  --dataset c4 --train_projo --model fox --remove
 done
 
 layers=(7,8 28,30 23,31 28,23 5,23)
 for layer in "${layers[@]}"
 do
   echo "Processing layer $layer on dataset ptb"
-  python main.py --layers "$layer" --root result --replacement_type bh_linear               --config config  --dataset arc_challenge --train_projo --model fox
-  python main.py --layers "$layer" --root result --replacement_type lowrank_linear --rank 1 --config config  --dataset arc_challenge --train_projo --model fox
-  python main.py --layers "$layer" --root result --replacement_type lowrank_linear --rank 4 --config config  --dataset arc_challenge --train_projo --model fox
-  python main.py --layers "$layer" --root result --replacement_type rotor                   --config config  --dataset arc_challenge --train_projo --model fox --remove
+  python main.py --layers "$layer" --root result --replacement_type bh_linear               --config config_files/config  --dataset arc_challenge --train_projo --model fox
+  python main.py --layers "$layer" --root result --replacement_type lowrank_linear --rank 1 --config config_files/config  --dataset arc_challenge --train_projo --model fox
+  python main.py --layers "$layer" --root result --replacement_type lowrank_linear --rank 4 --config config_files/config  --dataset arc_challenge --train_projo --model fox
+  python main.py --layers "$layer" --root result --replacement_type rotor                   --config config_files/config  --dataset arc_challenge --train_projo --model fox --remove
 done
 
 layers=(14,26 14,15 5,9 6,17 18,27)
 for layer in "${layers[@]}"
 do
   echo "Processing layer $layer on dataset ptb"
-  python main.py --layers "$layer" --root result --replacement_type bh_linear               --config config  --dataset hellaswag_chat --train_projo --model fox
-  python main.py --layers "$layer" --root result --replacement_type lowrank_linear --rank 1 --config config  --dataset hellaswag_chat --train_projo --model fox
-  python main.py --layers "$layer" --root result --replacement_type lowrank_linear --rank 4 --config config  --dataset hellaswag_chat --train_projo --model fox
-  python main.py --layers "$layer" --root result --replacement_type rotor                   --config config  --dataset hellaswag_chat --train_projo --model fox --remove
+  python main.py --layers "$layer" --root result --replacement_type bh_linear               --config config_files/config  --dataset hellaswag_chat --train_projo --model fox
+  python main.py --layers "$layer" --root result --replacement_type lowrank_linear --rank 1 --config config_files/config  --dataset hellaswag_chat --train_projo --model fox
+  python main.py --layers "$layer" --root result --replacement_type lowrank_linear --rank 4 --config config_files/config  --dataset hellaswag_chat --train_projo --model fox
+  python main.py --layers "$layer" --root result --replacement_type rotor                   --config config_files/config  --dataset hellaswag_chat --train_projo --model fox --remove
 done
 
 # python /workspace/emailme/emailme.py --GPU "$gpu_id"
