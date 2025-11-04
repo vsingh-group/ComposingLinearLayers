@@ -2,6 +2,8 @@
 
 This repository contains the implementation for the NeurIPS 2025 paper "Composing Linear Layers from Irreducibles" by Travis Pence, Daisuke Yamada, and Vikas Singh.
 
+**Paper**: [arXiv:2507.11688](https://arxiv.org/abs/2507.11688)
+
 ## Overview
 
 This work demonstrates how linear layers in large language models can be decomposed into geometric primitives (bivectors) using Clifford algebra, achieving exponential parameter reduction from O(d²) to O(log²d) while maintaining competitive performance. We replace key, query, and value projections in LLM attention layers with rotor-based transformations that compose simple geometric rotations.
@@ -10,7 +12,7 @@ This work demonstrates how linear layers in large language models can be decompo
 
 ### Installation
 1. Clone this repo
-2. Install torch_ga_fix from the submission branch (not the main) (https://github.com/TravisNP/torch_ga_fix/tree/submission#) in a different directory with ```pip install .```
+2. Clone and install torch_ga_fix from the submission branch (not the main) (https://github.com/TravisNP/torch_ga_fix/tree/submission#) in a different directory with ```pip install .```
 3. Clone and install fast-hadamard-transofrm (https://github.com/Dao-AILab/fast-hadamard-transform.git) in a different directory with ```pip install .```
 4. Install requirements.txt
 ```bash
