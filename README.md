@@ -47,6 +47,9 @@ Available models:
 - `run_qwen.sh` - Qwen-2.5 1.5B
 - `run_fox.sh` - Fox-1.0 1.6B
 
+Below are the average PPL for replacing up to three transformer layers of LLaMa and Qwen
+![Average Table](images/average_table.png)
+
 ### Projection Convergence Experiment (Appendix D)
 
 To reproduce the projection convergence analysis:
