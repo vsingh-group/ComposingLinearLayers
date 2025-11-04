@@ -11,21 +11,21 @@ import matplotlib.pyplot as plt
 def _update_rotors(self) -> None:
         with torch.no_grad():
             _, self.v_init_left = self._simple_decomp(self.bivectors_left, self.v_init_left, True)
-            if self.two_rotor:
+            if not self.single_rotor:
                 _, self.v_init_right = self._simple_decomp(self.bivectors_right, self.v_init_right)
 
         # (k, in_chunks * out_chunks, num_basis_biv)
         simple_decomp_left, _ = self._simple_decomp(self.bivectors_left, self.v_init_left, False)
-        if self.two_rotor:
+        if not self.single_rotor:
             simple_decomp_right, _ = self._simple_decomp(self.bivectors_right, self.v_init_right)
 
         # (k, in_chunks * out_chunks, num_basis_biv + 1)
         rotor_decomp_left = self.algebra.exp_simple_batched(simple_decomp_left.reshape(-1, self.num_basis_biv)).reshape(self.k, self.bivectors_left.shape[0], self.num_basis_biv + 1)
-        if self.two_rotor:
+        if not self.single_rotor:
             rotor_decomp_right = self.algebra.exp_simple_batched(simple_decomp_right.reshape(-1, self.num_basis_biv)).reshape(self.k, self.bivectors_left.shape[0], self.num_basis_biv + 1)
 
         # (1, chunk_size, chunk_size)
-        if self.two_rotor:
+        if not self.single_rotor:
             sandwich_product_matrix = self.algebra.precompute_sandwich_product_doublerotor(rotor_decomp_left, rotor_decomp_right)
         else:
             sandwich_product_matrix = self.algebra.precompute_sandwich_product(rotor_decomp_left)
