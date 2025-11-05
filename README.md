@@ -24,16 +24,15 @@ git checkout submission
 cd ../
 ```
 
-2. Pull the pytorch docker image and create a container
+2. Pull the pytorch docker image and create/start/attach to a container
 ```bash
-docker create -it \
+docker pull pytorch/pytorch:2.5.1-cuda12.1-cudnn9-devel
+docker run -it \
   --name ComposingLinearLayers \
   --gpus all \
   -v "$(pwd):/workspace" \
   pytorch/pytorch:2.5.1-cuda12.1-cudnn9-devel \
   bash
-docker start ComposingLinearLayers
-docker attach ComposingLinearLayers
 ```
 
 3. Install torch_ga_fix and fast-hadamard-transform
@@ -54,6 +53,8 @@ pip install -r requirements.txt
 ```bash
 export HUGGINGTOKEN=<yourtokenhere>
 ```
+
+To stop the container, type ```exit```. To start/attach to the container later, use ```docker start -ai ComposingLinearLayers```.
 
 ## Running Experiments
 
