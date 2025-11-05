@@ -269,7 +269,7 @@ if __name__ == "__main__":
     parser.add_argument("--eval_datatype", type=str, default="float32", choices=['bfloat16', 'float32'], help="Data type of evaluate data in. Unsure if working?")
     parser.add_argument("--replacement_type", type=str, required=True, choices=['rotor', 'lowrank_linear', 'bh_linear'], help="Replacement type for layer")
     parser.add_argument("--rank", type=int, help="Rank for lowrank linear")
-    parser.add_argument("--llm_batch_size", type=int, help="Number of prompts processed at once")
+    parser.add_argument("--llm_batch_size", type=int, default=16, help="Number of prompts processed at once")
     parser.add_argument("--remove", action="store_true", help="If set, do not save data")
 
     args = parser.parse_args()
