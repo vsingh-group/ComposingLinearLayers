@@ -18,8 +18,10 @@ This work demonstrates how linear layers in large language models can be decompo
 ```bash
 git clone git@github.com:vsingh-group/ComposingLinearLayers.git
 git clone git@github.com:TravisNP/torch_ga_fix.git
-git checkout submission
 git clone git@github.com:Dao-AILab/fast-hadamard-transform.git
+cd torch_ga_fix
+git checkout submission
+cd ../
 ```
 
 2. Pull the pytorch docker image and create a container
