@@ -14,35 +14,51 @@ This work demonstrates how linear layers in large language models can be decompo
 
 ## Setup
 
-### Installation
-1. Clone this repo
-2. Clone and install torch_ga_fix from the submission branch (not the main) (https://github.com/TravisNP/torch_ga_fix/tree/submission#) in a different directory with ```pip install .```
-3. Clone and install fast-hadamard-transofrm (https://github.com/Dao-AILab/fast-hadamard-transform.git) in a different directory with ```pip install .```
+1. Clone thhis repo, the submission branch of torch_ga_fix (https://github.com/TravisNP/torch_ga_fix/tree/submission#), and fast-hadamard-transform (https://github.com/Dao-AILab/fast-hadamard-transform.git).
+```bash
+git clone git@github.com:vsingh-group/ComposingLinearLayers.git
+git clone git@github.com:TravisNP/torch_ga_fix.git
+git checkout submission
+git clone git@github.com:Dao-AILab/fast-hadamard-transform.git
+```
+
+2. Pull the pytorch docker image and create a container
+```bash
+docker create -it \
+  --name ComposingLinearLayers \
+  --gpus all \
+  -v "$(pwd):/workspace" \
+  pytorch/pytorch:2.5.1-cuda12.1-cudnn9-devel \
+  bash
+docker start ComposingLinearLayers
+docker attach ComposingLinearLayers
+```
+
+3. Install torch_ga_fix and fast-hadamard-transform
+```bash
+cd torch_ga_fix/
+pip install .
+cd ../fast-hadamard-transform/
+pip install .
+```
+
 4. Install requirements.txt
 ```bash
-    cd /rotor
-    pip install -r requirements.txt
+cd ../ComposingLinearLayers/
+pip install -r requirements.txt
 ```
-5. Set HUGGINGTOKEN environment variable with ```export HUGGINGTOKEN=<yourtokenhere>```
 
-
-### Docker Alternative
-
-If you encounter issues, we recommend using the PyTorch Docker image we used for experiments:
+5. Set HUGGINGTOKEN environment variable with 
 ```bash
-docker pull pytorch/pytorch:2.5.1-cuda12.1-cudnn9-devel
-docker run -it --gpus all pytorch/pytorch:2.5.1-cuda12.1-cudnn9-devel
-# Inside container:
-pip install transformers==4.51.3 datasets
+export HUGGINGTOKEN=<yourtokenhere>
 ```
 
 ## Running Experiments
 
 ### Main Experiments
 
-To replace attention layers in different LLMs, navigate to the rotor directory and run the corresponding script:
+To replace attention layers in different LLMs, navigate to the ComposingLinearLayers directory and run the corresponding script:
 ```bash
-cd rotor
 ./run/run_<model_name>.sh
 ```
 
